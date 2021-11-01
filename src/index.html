@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="description" content="Realtime web app created with MigratoryData" />
+	<title>In-Page Web Notification with MigratoryData</title>
+
+	<link href="css/terminal.css" rel="stylesheet">
+	<link href="css/notification.css" rel="stylesheet">
+	<link href="css/app.css" rel="stylesheet">
+</head>
+
+<body>
+	<noscript>You need to enable JavaScript to run this app.</noscript>
+
+	<div id="page" class="site">
+		<main id="content" class="site-content">
+			<div id="tableId" class="inner">
+				<center>
+					<h1>MigratoryData In-Page Web Notification Demo</h1>
+					<p>This web application displays a notification in your browser by sending a REST request using curl command found bellow to the MigratoryData server.</p>
+				
+					<div class="terminal-bar">
+						<div class="red-circle"></div>
+						<div class="yellow-circle"></div>
+						<div class="green-circle"></div>
+					  </div>
+					  <div class="terminal-body">
+						<textarea id="curl_textarea"></textarea>
+						<div class="copy-button tooltip" data-clipboard-target="#curl_textarea"><a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAAbUlEQVRIiWNgGE7Am4GB4QkDA8N/MjFB8JgCw4mygGiFpAAmahtIigXkxsljBgYGT2wGogcRJXHyiBgLyI0TFH0DGgejFoxaMFIsYEFiM9LCggENoidQmpyK5zExlnsykFeiPmJgYPAgxoKhAQAobmMW+E0ohwAAAABJRU5ErkJggg=="/><span class="tooltiptext">Copy</span></a></div>
+					</div>
+				</center>
+				<script type="text/javascript" src="lib/clipboard.min.js"></script>
+				<script type="text/javascript" src="lib/migratorydata-client.js"></script>
+				<script type="text/javascript" src="app/config.js"></script>
+				<script type="text/javascript" src="app/app.js"></script>
+			</div>
+		</main>
+	</div>
+	  <!-- rest demo notification -->
+	  <div id="notification-container" class="notification-container notification-top-right" style="display: none;">
+		<div class="notification notification-success notification-icon" aria-live="polite">
+		  <button id="notification-close" type="button" class="notification-close-button">×</button>
+		  <div id="notification-message" class="notification-message"></div>
+		</div>
+	  </div>
+	  <!-- rest demo notification -->	
+</body>
+
+</html>

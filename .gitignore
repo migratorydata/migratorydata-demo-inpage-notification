@@ -1,0 +1,30 @@
+.idea/workspace.xml
+.idea/dictionaries
+.idea/misc.xml
+dist/
+out/
+
+node_modules
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+
+# Log files
+*.log
+
+# Intellij
+*.iml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/libraries
+*.log.lck
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build

@@ -1,0 +1,16 @@
+{
+  "name": "migratorydata-demo-inpage-notification",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "serve src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "support@migratorydata.com",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^11.3.2"
+  }
+}
