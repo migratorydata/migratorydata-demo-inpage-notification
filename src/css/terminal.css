@@ -88,7 +88,8 @@
   
   .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: 60px;
+    font-size: 12px;
     background-color: black;
     color: #fff;
     text-align: center;
@@ -98,7 +99,7 @@
     z-index: 1;
     top: 150%;
     left: 50%;
-    margin-left: -60px;
+    margin-left: -30px;
   }
   
   .tooltip .tooltiptext::after {
