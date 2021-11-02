@@ -4,13 +4,15 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "serve src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "./node_modules/.bin/esbuild ./src/app/app.js --bundle --outfile=./src/bundle/app.js",
+    "start": "./node_modules/.bin/esbuild ./src/app/app.js --servedir=src --outfile=./src/bundle/app.js --bundle"
   },
   "keywords": [],
   "author": "support@migratorydata.com",
   "license": "MIT",
-  "devDependencies": {
-    "serve": "^11.3.2"
+  "dependencies": {
+    "clipboard": "^2.0.8",
+    "esbuild": "^0.13.12",
+    "migratorydata-client": "^6.0.9"
   }
 }

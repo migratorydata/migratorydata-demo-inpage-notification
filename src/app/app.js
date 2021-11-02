@@ -1,5 +1,8 @@
+const MigratoryDataClient = require("migratorydata-client");
+const ClipboardJS = require('clipboard');
+
 // the default address of the MigratoryData Server installed on local machine.
-var SERVER = "http://127.0.0.1:8800";
+var SERVER = "https://demo.migratorydata.com";
 
 // the subject used to receive messages fromMigratoryData Server.
 var SUBJECT = "/push/notification";
@@ -11,22 +14,25 @@ document.addEventListener('DOMContentLoaded', function() {
 	initUI();
 
 	// init the MigratoryData client
-	MigratoryDataClient.setEntitlementToken(TOKEN);
-	MigratoryDataClient.setServers([SERVER]);
+	let client = new MigratoryDataClient();
+	client.setEntitlementToken(TOKEN);
+	client.setServers([SERVER]);
 
-	MigratoryDataClient.setStatusHandler(function(event) {
+	client.setStatusHandler(function(event) {
         console.log("Status : " + event.type + " : " + event.info);
     });
 	
-	MigratoryDataClient.setMessageHandler(function(message) {
+	client.setMessageHandler(function(message) {
 		if (message.type != MigratoryDataClient.MESSAGE_TYPE_SNAPSHOT) {
-			console.log("Message : " + message);
+			console.log(message);
 
 			displayNotification(message);
 		}
-	});	
-	MigratoryDataClient.connect();
-	MigratoryDataClient.subscribe([SUBJECT]);
+	});
+
+	client.subscribe([SUBJECT]);
+
+	client.connect();
 });
 
 function initUI() {
