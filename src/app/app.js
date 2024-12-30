@@ -1,6 +1,8 @@
 const MigratoryDataClient = require("migratorydata-client");
 const ClipboardJS = require('clipboard');
 
+var CONTENT = 'Hello, World!';
+
 // the default address of the MigratoryData Server installed on local machine.
 var SERVER = "https://cloud.migratorydata.com";
 
@@ -8,7 +10,7 @@ var SERVER = "https://cloud.migratorydata.com";
 var SUBJECT = "/migratorydata/notification/" + getPushNotificationDemoId();
 
 // default EntitlementToken used in MigratoryData Server.
-var TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NzhmZDAiLCJwZXJtaXNzaW9ucyI6eyJhbGwiOlsiL21pZ3JhdG9yeWRhdGEvbm90aWZpY2F0aW9uLyoiXX0sImFwcCI6Im5vdGlmaWNhdGlvbiIsImlhdCI6MTY5MTYwMTE2OCwiZXhwIjoxNzIyNzA1MTY4fQ.C9yGVC6j0w-mscbYyXEWQ8Nf-8GFuqjNj0SoOOiU4Ow";
+var TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2NmIyMGUzZmExMmUyMC43NTI5MjY4MCIsImlhdCI6MTcyMjk0NTA4Ny42NTkyNywiZXhwIjoxNzU0NDgxMDg3LjY1OTI3LCJwZXJtaXNzaW9ucyI6eyJhbGwiOlsiL21pZ3JhdG9yeWRhdGEvbm90aWZpY2F0aW9uLyoiXX19.609S936WTW7v2iR7P5Epmfs1qaDK97z9BGq4YDvd4PU";
 
 function generateRandomId(length) {
   var result = '';
@@ -60,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function initUI() {
 	// init the UI
-	document.getElementById("curl_textarea").value = "curl -d \"my realtime message\" -X POST \"" + SERVER + "/rest/produce?token=" + TOKEN + "&subject=" + SUBJECT + "\"";
+	document.getElementById("curl_textarea").innerHTML = "<div style=\"text-align:left;color:#333333;\"><code class=\"language-bash\" data-lang=\"bash\"><span style=\"color:#FF5733;\">SUBJECT</span>='" + SUBJECT + "' <br><span style=\"color:#FF5733;\">CONTENT</span>='" + CONTENT + "' <br><div class=\"truncate\"><span style=\"color:#FF5733;\">TOKEN</span>='" + TOKEN + "'</div> <br><span style=\"color:#272822;\">curl -d \"<span style=\"color:#FF5733;\">\$CONTENT</span>\" -X POST</span> \"" + SERVER + "/rest/produce?token=<span style=\"color:#FF5733;\">\$TOKEN</span>" + '&' + "subject=<span style=\"color:#FF5733;\">\$SUBJECT</span>\"</code></div>";
 
 	// init copy and tooltip
 	var clipboard = new ClipboardJS('.copy-button');

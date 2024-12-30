@@ -27,4 +27,11 @@ To build and run this web application run the following command:
 npm run start
 ```
 
-then open in a web browser the address displayed by the command above.
+then open in a web browser the address displayed by the command above
+
+
+## Build 
+
+npm run-script build
+
+.
